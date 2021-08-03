@@ -1,0 +1,227 @@
+body {
+  position: relative;
+  @extend %Montserrat-500;
+  font-size: 22px;
+  line-height: 1;
+  color: #333333;
+  background-image: linear-gradient(00deg, #EC222A 0%, #D12A31 100%);
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  padding: 0 10px;
+  margin: 0 auto;
+  &--large {
+    max-width: 1800px;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: -1px;
+  border: 0;
+  padding: 0;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.default-btn {
+  display: block;
+  max-width: 310px;
+  width: 100%;
+  padding: 23px;
+  border-radius: 40px;
+  border: 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #333333;
+  background-image: linear-gradient(93.19deg, #FFFF00 7.96%, #FFF500 94.91%);
+  box-shadow: 0px 0px 25px rgba(255, 254, 0, 0.25);
+  transition: bacckground 0.3s linear, box-shadow 0.3s linear;
+  
+  span {
+    position: relative;
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      font-size: 24px;
+      height: 3px;
+      width: 10px;
+      border-radius: 2px;
+      top: 50%;
+      left: 3px;
+      background-color: #333333;
+    }
+
+    &::after {
+      transform: translateY(-125%) rotate(45deg);
+    }
+  
+    &::before {
+      transform: translateY(45%) rotate(-45deg);
+    }
+  }
+
+  &:hover {
+    background-image: linear-gradient(93.19deg, #FBFF32 7.96%, #FFD600 94.91%);
+    box-shadow: 0px 0px 45px rgba(255, 254, 0, 0.6);
+  }
+
+  &:focus {
+    outline: transparent;
+  }
+}
+
+.main {
+  overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 30px;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background-image: url(../images/ellipse-bg.png);
+    background-position: center center;
+    background-size: cover; 
+  }
+}
+
+.title {
+  max-width: 1750px;
+  margin: 0 auto;
+  @extend %Montserrat-900;
+  font-size: 165px;
+  color: #e4e4e4;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: -15px 15px #333333;
+  @include skew-block(-2deg);
+}
+
+.text {
+  background-color: #fde500;
+  padding: 50px 12px 32px;
+  border-radius: 5px;
+  max-width: 1270px;
+  margin: 0 auto;
+  @extend %Montserrat-800-italic;
+  font-size: 62px;
+  text-align: center;
+
+  text-transform: uppercase;
+  @include skew-block(-4deg);
+}
+
+.ansver {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;
+  
+  &--active {
+    display: block;
+
+    .ansver__item {
+      max-width: 272px;
+      margin: 10px auto;
+    }
+  }
+
+  &__item {
+    margin: 5px;
+    max-width: 133px;
+    width: 100%;
+  }
+  
+  &__btn {
+    border: 0;
+    width: 100%;
+    height: 100%;
+    @extend %Montserrat-400;
+    font-size: 18px;
+    color: #292929;
+    padding: 5px 35px;
+    background: #FAFAFA;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+
+    &--active {
+      max-width: 272px;
+      padding: 16px;
+    }
+  }
+}
+
+.back-arrow {
+  display: block;
+  max-width: 70px;
+  margin: 59px auto 0;
+  position: relative;
+  padding-left: 9px;
+
+  &:after,
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 8px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #d10a12;
+  }
+
+  &::after {
+    transform: translateY(50%) rotate(45deg);
+  }
+
+  &::before {
+    transform: translateY(-150%) rotate(-45deg);
+  }
+}
+
+.cookies {
+  position: fixed;
+  top: calc(100vh - 36px);
+  left: 0;
+  right: 0;
+  border-radius: 30px 30px 0 0;
+  @extend %Roboto-400;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  background-color: rgba($color: #000000, $alpha: 0.3);
+  &__btn {
+    border: 0;
+    background-color: transparent;
+    margin-left: 15px;
+    padding: 10px 0;
+    @extend %Roboto-500;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+}
+
